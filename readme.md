@@ -1,20 +1,35 @@
-# Sport Facility Booking System
+# Pro Setup Express
 
 ## Overview
 
-The Sport Facility Booking System is a TypeScript-based backend application designed to manage bookings for various sports facilities. It uses MongoDB for data storage, Mongoose for object modeling, Express.js for handling routes and middleware, and Zod for input validation. The system includes role-based authentication with endpoints accessible to "user" and "admin" roles as per specified permissions.
+Introduction
+Pro Setup Express is an API server developed using Node.js and Express, designed to manage product and category data efficiently. With a focus on security and usability, this server implements role-based access control, ensuring that only authorized administrators can create, read, update, and delete products and categories. Regular users can browse and purchase products seamlessly. The project employs modern best practices, including JWT for secure authentication and a structured API design, making it an ideal solution for e-commerce applications.
 
-## Key Features
+## Table of Contents
 
-- **User Management:** Allows users to sign up and log in securely.
+- [Features](#features)
+- [Live URL](#live-url)
+- [Getting Started](#getting-started)
+- [API Endpoints](#api-endpoints)
+- [Technologies Used](#technologies-used)
+- [Scripts](#scripts)
+- [Contributing](#contributing)
+- [License](#license)
 
-- **Facility Management:** Admins can perform CRUD operations on facilities.
 
-- **Booking Management:** Users can book facilities for specific time slots, and admins can view all bookings or bookings by specific users.
+## Features
 
-- **Availability Check:** Provides endpoint to check availability of facilities on a given date.
+- Role-based access control for admin and user roles
+- CRUD operations for products and categories (admin only)
+- User ability to view and purchase products
+- Secure authentication using JSON Web Tokens (JWT)
+- Detailed error handling and HTTP status codes
+- Environment variable management with dotenv
 
-- **Role-based Access Control:** Ensures that only authorized users can access specific endpoints based on their roles.
+## Live URL
+
+[Live Demo](https://your-live-url.com)
+
 
 ## Installation
 
@@ -36,53 +51,49 @@ The Sport Facility Booking System is a TypeScript-based backend application desi
 
 ## API Endpoints
 
+### Admin Routes
+
+- **Create Product**: `POST /api/products`
+- **Get All Products**: `GET /api/products`
+- **Update Product**: `PUT /api/products/:id`
+- **Delete Product**: `DELETE /api/products/:id`
+- **Create Category**: `POST /api/categories`
+- **Get All Categories**: `GET /api/categories`
+- **Update Category**: `PUT /api/categories/:id`
+- **Delete Category**: `DELETE /api/categories/:id`
+
+### User Routes
+
+- **View Products**: `GET /api/products`
+- **View Categories**: `GET /api/categories`
+- **Purchase Product**: `POST /api/purchase`
+
 ### Authentication
 
-- **POST /api/auth/signup** - User signup.
-
-- **POST /api/auth/login** - User login.
-
-### Facilities
-
-- **GET /api/facility** - Get all facilities.
-
-- **POST /api/facility** - Admin can create a new facility.
-
-- **DELETE /api/facility/:id** - Admin can delete a facility.
-
-- **PUT /api/facility/:id** - Admin can update a facility.
-
-### Bookings
-
-- **GET /api/bookings** - (Admin) Get all bookings.
-
-- **GET /api/bookings/user** - (User) Get bookings of the logged-in user.
-
-- **POST /api/bookings** - (User) Make a booking for a facility.
-
-- **DELETE /api/bookings/:id** - (User) Cancel a booking.
-
-### Availability
-
-- **GET /api/check-availability?date=<YYYY-MM-DD>** - Check availability of facilities on a specific date.
-
-
-## Live API URL
-You can access the live API at https://sport-facility-booking-platform.vercel.app/
+- **Login**: `POST /api/auth/login`
+- **Register**: `POST /api/auth/register`
 
 ## Technologies Used
 
-- **Express.js:** Fast, unopinionated, minimalist web framework for Node.js.
-- **Mongoose:** Elegant MongoDB object modeling for Node.js.
-- **TypeScript:** Typed superset of JavaScript that compiles to plain JavaScript.
-- **Zod:** TypeScript-first schema declaration and validation library.
-- **Dotenv:** Module that loads environment variables from a .env file into process.env.
-- **CORS:** Middleware for enabling Cross-Origin Resource Sharing in Express.js.
+- Node.js
+- Express
+- MongoDB (via Mongoose)
+- TypeScript
+- JWT for authentication
+- ESLint and Prettier for code quality
+
+## Scripts
+
+- `npm run start:dev`: Start the server in development mode
+- `npm run start:prod`: Start the server in production mode
+- `npm run build`: Build the TypeScript files
+- `npm run lint`: Lint the code
+- `npm run lint:fix`: Fix linting issues
+- `npm run prettier`: Format the code with Prettier
+
 
 ## Usage
 
 - Ensure MongoDB is running and accessible.
 - Use API testing tools like Postman or curl to interact with the API endpoints.
 - Authenticate admin and user requests with JSON Web Tokens (JWTs) included in the Authorization header
-
-I am excited for you to explore and leverage the capabilities of Sport Facility Booking System. Should you have any questions, feedback, or suggestions, please don't hesitate to reach out. Thank you for choosing my solution to enhance Sport Facility Booking System workflows!

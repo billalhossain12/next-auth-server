@@ -1,3 +1,5 @@
+import httpStatus from 'http-status';
+import AppError from '../../errors/AppError';
 import { TProduct } from './product.interface';
 import { Product } from './product.model';
 
@@ -13,6 +15,12 @@ const getAllProductsFromDB = async () => {
 
 const getSingleProductFromDB = async (id: string) => {
   const result = await Product.findById(id);
+  if (!result) {
+    throw new AppError(
+      httpStatus.NOT_FOUND,
+      `Product not found with id ${id}`,
+    );
+  }
   return result;
 };
 
