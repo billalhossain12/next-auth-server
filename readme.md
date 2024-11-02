@@ -28,13 +28,13 @@ Pro Setup Express is an API server developed using Node.js and Express, designed
 
 ## Live URL
 
-[Live Demo](https://your-live-url.com)
+https://next-auth-server-psi.vercel.app/
 
 
 ## Installation
 
 1. **Clone the repository:**
-   git clone https://github.com/Billal990/sport-facility-booking-platform.git
+   git clone https://github.com/billalhossain12/next-auth-server
 
 2. **Install dependencies:**
    cd sport-facility-booking-system <br>
@@ -53,25 +53,25 @@ Pro Setup Express is an API server developed using Node.js and Express, designed
 
 ### Admin Routes
 
-- **Create Product**: `POST /api/products`
-- **Get All Products**: `GET /api/products`
-- **Update Product**: `PUT /api/products/:id`
-- **Delete Product**: `DELETE /api/products/:id`
-- **Create Category**: `POST /api/categories`
-- **Get All Categories**: `GET /api/categories`
-- **Update Category**: `PUT /api/categories/:id`
-- **Delete Category**: `DELETE /api/categories/:id`
+- **Create Product**: `POST /api/v1/products`
+- **Get All Products**: `GET /api/v1/products`
+- **Update Product**: `PUT /api/v1/products/:id`
+- **Delete Product**: `DELETE /api/v1/products/:id`
+- **Create Category**: `POST /api/v1/categories`
+- **Get All Categories**: `GET /api/v1/categories`
+- **Update Category**: `PUT /api/v1/categories/:id`
+- **Delete Category**: `DELETE /api/v1/categories/:id`
 
 ### User Routes
 
-- **View Products**: `GET /api/products`
-- **View Categories**: `GET /api/categories`
-- **Purchase Product**: `POST /api/purchase`
+- **View Products**: `GET /api/v1/products`
+- **View Categories**: `GET /api/v1/categories`
+- **Purchase Product**: `POST /api/v1/purchase`
 
 ### Authentication
 
-- **Login**: `POST /api/auth/login`
-- **Register**: `POST /api/auth/register`
+- **Login**: `POST /api/v1/auth/login`
+- **Register**: `POST /api/v1/auth/register`
 
 ## Technologies Used
 
