@@ -13,7 +13,7 @@ const registerUser = async (payload: TRegisterUser) => {
   const user = await User.isUserExistsByEmail(payload?.email);
 
   if (user) {
-    throw new AppError(httpStatus.NOT_FOUND, 'This user is already exist!');
+    throw new AppError(400, 'This user is already exist!');
   }
 
   payload.role = USER_ROLE.USER;
@@ -68,7 +68,7 @@ const loginUser = async (payload: TLoginUser) => {
   //checking if the password is correct
 
   if (!(await User.isPasswordMatched(payload?.password, user?.password)))
-    throw new AppError(httpStatus.FORBIDDEN, 'Password do not matched');
+    throw new AppError(400, 'Password do not matched');
 
   //create token and sent to the  client
 
