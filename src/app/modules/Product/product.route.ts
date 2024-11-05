@@ -16,9 +16,14 @@ router.post(
 
 router.get('/get-products', productControllers.getAllProducts);
 router.get('/get-single-product/:id', productControllers.getSingleProduct);
-router.delete('/delete-product/:id', productControllers.deleteProduct);
+router.delete(
+  '/delete-product/:id',
+  auth(USER_ROLE.ADMIN),
+  productControllers.deleteProduct,
+);
 router.put(
   '/update-product/:id',
+  auth(USER_ROLE.ADMIN),
   validateRequest(productValidationSchemas.updateProductValidationSchema),
   productControllers.updateProduct,
 );
